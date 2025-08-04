@@ -1,0 +1,26 @@
+# игнорирование скомпилированных Python файлов и кэша
+__pycache__/
+*.py[cod]
+
+# игнорирование виртуального окружения
+venv/
+env/
+.venv/
+
+# игнорирование файлов среды и переменных окружения
+.env
+*.env
+
+# игнорирование папок и файлов дистрибутивов и сборок
+dist/
+build/
+*.egg-info/
+
+# игнорирование настроек IDE и ос
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# игнорирование checkpoint Jupiter notebooks
+.ipynb_checkpoints/
