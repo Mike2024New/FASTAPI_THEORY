@@ -46,9 +46,12 @@ def show_three_project(main_directory, exclude_directory, exclude_files):
 
 
 if __name__ == '__main__':
+    root_dir = os.path.split(os.getcwd())[0]
     res = show_three_project(
-        main_directory=os.path.split(os.getcwd())[0],
-        exclude_directory=("idea", "venv", "pycache", "git"),
+        # main_directory=os.path.join(root_dir, 'THEORY'),
+        main_directory=os.path.join(root_dir),
+        # main_directory=r"C:\Users\MikeCoder\Documents\LESSONS\PYDANTIC",
+        exclude_directory=("idea", "venv", "pycache", ".git", ".venv", ".idea"),
         exclude_files=(".git", "requirements.txt"),
     )
     print(res)
