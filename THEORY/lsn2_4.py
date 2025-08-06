@@ -7,7 +7,8 @@ try:
     from typing import Annotated
 except ImportError:
     from typing_extensions import Annotated
-
+# http://127.0.0.1:8000/docs
+# http://127.0.0.1:8000/redoc
 app = FastAPI()
 
 """

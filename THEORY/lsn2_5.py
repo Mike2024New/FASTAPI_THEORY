@@ -3,6 +3,8 @@ from fastapi import FastAPI, Query
 import uvicorn
 from typing import Annotated
 
+# http://127.0.0.1:8000/docs
+# http://127.0.0.1:8000/redoc
 app = FastAPI()
 
 """

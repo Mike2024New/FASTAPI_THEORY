@@ -2,6 +2,8 @@
 from fastapi import FastAPI
 import uvicorn
 
+# http://127.0.0.1:8000/docs
+# http://127.0.0.1:8000/redoc
 app = FastAPI()
 
 # псевдосайт со страницами

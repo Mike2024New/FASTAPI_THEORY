@@ -51,6 +51,7 @@ if __name__ == '__main__':
         # main_directory=os.path.join(root_dir, 'THEORY'),
         main_directory=os.path.join(root_dir),
         # main_directory=r"C:\Users\MikeCoder\Documents\LESSONS\PYDANTIC",
+        # main_directory=r"C:\Users\MikeCoder\Documents\projects\web_design\THEORY\HTML_THEORY",
         exclude_directory=("idea", "venv", "pycache", ".git", ".venv", ".idea"),
         exclude_files=(".git", "requirements.txt"),
     )

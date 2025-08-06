@@ -2,6 +2,8 @@
 from fastapi import FastAPI
 from UTILS.REQUEST_TEST import get_request
 
+# http://127.0.0.1:8000/docs
+# http://127.0.0.1:8000/redoc
 app = FastAPI()
 
 """
