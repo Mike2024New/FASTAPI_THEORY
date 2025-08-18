@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            font-family: monospace;
+        }
+        form{
+            padding: 10px;
+            width: 400px;
+            margin-bottom: 10px;
+            border: 1px dashed black;
+            border-radius:15px;
+        }
+        input[name="file"]{
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<!--
+ДЛЯ THEORY/lsn8_4.py
+Приём файлов пользователя из html форм
+-->
+<body>
+<form action="/ex1/" enctype="multipart/form-data" method="post">
+    <h2>Пример для маршрута /ex1/</h2>
+    <input name="file" type="file" multiple>
+    <input type="submit">
+</form>
+
+<form action="/ex2/" enctype="multipart/form-data" method="post">
+    <h2>Пример для маршрута /ex2/</h2>
+    <input name="file" type="file" multiple>
+    <input type="submit">
+</form>
+
+<form action="/ex3/" enctype="multipart/form-data" method="post">
+    <h2>Пример для маршрута /ex3/</h2>
+    <input name="file" type="file" multiple>
+    <input type="submit">
+</form>
+
+
+<form action="/ex4/" enctype="multipart/form-data" method="post">
+    <h2>Пример для маршрута /ex4/</h2>
+    <input name="files" type="file" multiple>
+    <input type="submit">
+    <p>Метод поддерживает отправку нескольких файлов</p>
+</form>
+</body>
+</html>

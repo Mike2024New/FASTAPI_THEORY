@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            font-family: monospace;
+        }
+
+        form{
+            width: 300px;
+            border: solid black 1px;
+            padding: 10px;
+        }
+
+        input{
+            width: 250px;
+            display:block;
+            margin-bottom:10px;
+        }
+
+        select{
+            width: 250px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="/ex1/" method="post" enctype="multipart/form-data">
+    <h2>Маршрут /ex1/</h2>
+    <input type="text" name="username" placeholder="ваше имя..." required>
+    <select name="role">
+        <option value="" selected>выберите статус...</option>
+        <option value="admin">админ</option>
+        <option value="user">пользователь</option>
+    </select>
+    <input type="file" name="file">
+    <button type="submit">Отправить</button>
+</form>
+
+</body>
+</html>
