@@ -38,7 +38,7 @@ class User(BaseModel):
 @app.get("/")
 def home():
     """"""
-    content = read_file(file_path=os.path.join(os.getcwd(), 'HTML', 'file1.html'))
+    content = read_file(file_path=os.path.join(os.getcwd(), 'HTML', 'register.html'))
     return HTMLResponse(content=content, status_code=200)
 
 

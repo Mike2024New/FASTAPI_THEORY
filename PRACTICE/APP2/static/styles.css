@@ -1,0 +1,167 @@
+:root {
+    /* Цвета фона и текста */
+    --color-bg: #f7f9fc;               /* Общий фон страницы и карточек */
+    --color-text: #1a1a1a;             /* Основной цвет текста */
+    --color-heading: #222222;          /* Цвет заголовков */
+
+    /* Цвета для интерактивных элементов */
+    --color-primary: #4a90e2;          /* Основной цвет (кнопки, акценты) */
+    --color-primary-hover: #357abd;    /* Цвет при наведении на интерактив */
+    --color-button-text: #ffffff;      /* Цвет текста на кнопках */
+    --color-link: #4a90e2;             /* Цвет ссылок */
+    --color-link-hover: #357abd;       /* Цвет ссылок при наведении */
+
+    /* Цвета полей ввода */
+    --color-border: #ddd;              /* Рамка инпутов */
+    --color-input-bg: #ffffff;         /* Фон полей ввода */
+    --color-input-border-focus: #4a90e2; /* Рамка фокуса в инпуте */
+    --color-input-placeholder: #999999;   /* Цвет подсказок (placeholder) */
+
+    /* Цвета для чекбоксов и радиокнопок */
+    --color-checkbox-border: #999999;
+    --color-checkbox-checked-bg: #4a90e2;
+
+    /* Шрифты */
+    --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-family-base);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading);
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-bottom: 1em;
+}
+a:hover {
+    color: var(--color-link-hover);
+}
+
+.card {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 25px 30px;
+    border-radius: 12px;
+    background-color: var(--color-bg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+    padding: 12px 15px;
+    margin-bottom: 18px;
+    border: 1.8px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: var(--color-input-bg);
+    color: var(--color-text);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: var(--font-family-base);
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+    color: var(--color-input-placeholder);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--color-input-border-focus);
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+    padding: 13px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: var(--color-primary);
+    color: var(--color-button-text);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+    font-family: var(--font-family-base);
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: var(--color-primary-hover);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    cursor: pointer;
+    accent-color: var(--color-primary);
+}
+
+ul, ol {
+    margin-bottom: 1em;
+    padding-left: 1.5em;
+}
+
+li {
+    margin-bottom: 0.3em;
+}
+
+.card p,
+.card h2,
+.card h3 {
+    margin-top: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+th, td {
+    padding: 8px 12px;
+    border: 1px solid var(--color-border);
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-primary);
+    color: var(--color-button-text);
+}

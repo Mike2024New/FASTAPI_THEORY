@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Просмотр пользователей</title>
+    <style>
+        *{
+            box-sizing:border-box;
+            margin:0;
+            padding:0;
+            font-family:monospace;
+        }
+
+        .card{
+            padding: 10px;
+            width: 400px;
+            margin:20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: tomato;
+            font-size: 18px;
+            color: black;
+        }
+
+        .card span{
+            font-weight: bold;
+            color: blue;
+            font-style: italic;
+        }
+
+        h2{
+            color: black;
+            font-size: 24px;
+        }
+
+        ul{
+            list-style-type: none;
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="card">
+    <h2>Карточка пользователя № <span>{{ user_id }}</span></h2>
+    <ul>
+        <li>Имя: <span>{{ user.name }}</span></li>
+        <li>Возраст: <span>{{ user.age }}</span></li>
+        <li>Город: <span>{{ user.city }}</span></li>
+    </ul>
+</div>
+</body>
+</html>
