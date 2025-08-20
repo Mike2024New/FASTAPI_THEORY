@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<!--
+Простая форма с регистрацией пользователя, логин, пароль и дополнительная информация (чтобы было что в личном кабинете
+показать)
+(временно в value подставлены данные чтобы не вводить каждый раз при тестировании)
+-->
+<div class="card">
+    <h1>Домашняя страница</h1>
+    <p>Войдите в свою учётную запись</p>
+    <form action="http://127.0.0.1:8000/login/" method="post" enctype="multipart/form-data">
+        <input type="text" name="login" placeholder="Логин..." required>
+        <input type="password" name="password" placeholder="Пароль..." required>
+        <a href="http://127.0.0.1:8000/register/">Ещё нет аккаунта?</a>
+        <a href="http://127.0.0.1:8000/">На главную</a>
+        <button type="submit">Войти</button>
+    </form>
+</div>
+{% endblock %}

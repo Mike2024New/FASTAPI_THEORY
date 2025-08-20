@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h1>Домашняя страница</h1>
+    <ul>
+        {% if auth %}
+        <li><a href="http://127.0.0.1:8000/profile/">Профиль</a></li>
+        <li><a href="http://127.0.0.1:8000/logout/">Выйти</a></li>
+        {% else %}
+        <li><a href="http://127.0.0.1:8000/register/">зарегистрироватся</a></li>
+        <li><a href="http://127.0.0.1:8000/login/">войти</a></li>
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}
