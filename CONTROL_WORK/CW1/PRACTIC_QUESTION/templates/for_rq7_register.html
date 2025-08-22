@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --color-h1: #136fe8;
+            --content-background: #f8f6f6;
+            --content-box-shadow:2px 2px 10px 0px rgba(0, 0, 0,0.2);
+            --form-button-bg-color:#1572ec;
+            --form-button-bg-color-hover:#0f3567;
+            --form-button-font-color:#f8f6f6;
+            --form-input-border: rgb(208, 208, 210);
+            --form-input-border-focus:rgb(146, 146, 140);
+            --form-input-focus-shadow:-2px -2px 10px -2px rgba(0, 0, 0,0.2);
+            --form-a-color:#1572ec ;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            height: 100vh;
+        }
+
+
+        input{
+            font-size: 18px;
+            width: 100%;
+            height: 50px;
+            display: block;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px var(--form-input-border) solid;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input:hover{
+            border: 1px var(--form-input-border-focus) solid;
+        }
+
+        input:focus{
+            border: 2px var(--form-input-border-focus) solid;
+            box-shadow: var(--form-input-focus-shadow);
+        }
+
+        button{
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            height: 50px;
+            width: 100%;
+            background-color: var(--form-button-bg-color);
+            color:var(--form-button-font-color);
+            border-radius: 5px;
+        }
+
+        button:hover{
+            background-color: var(--form-button-bg-color-hover);
+        }
+
+        form{
+            width: 500px;
+        }
+
+        div[class="content"]{
+            background-color: var(--content-background);
+            margin-top:50px;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: var(--content-box-shadow);
+        }
+
+        h1{
+            color: var(--color-h1);
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        form>p{
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 5px;
+        }
+
+        a{
+            display: block;
+            color:var(--form-a-color);
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        a:hover{
+            padding-left:2px;
+        }
+
+
+        ul{
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        li{
+            font-weight:600;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <h1>Регистрация</h1>
+    <form action="" method="post">
+        <p>Зарегистрируйте новую учётную запись, прописав данные в форме ниже.</p>
+        <input type="text" name="login" placeholder="придумайте логин..." required>
+        <input type="password" name="password" placeholder="придумайте пароль..." required>
+        <input type="password" name="password_repeat" placeholder="повторите пароль..." required>
+        <p>Дополнительная информация:</p>
+        <input type="text" name="name" placeholder="ваше имя...">
+        <input type="number" name="age" placeholder="ваш возраст..." min="18" max="99">
+        <input type="text" name="city" placeholder="ваш город...">
+        <a href="#">Уже есть учётная запись?</a>
+        <a href="#">На главную</a>
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+</body>
+</html>
