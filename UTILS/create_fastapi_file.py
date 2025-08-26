@@ -25,11 +25,11 @@ app.name = "app"
 # http://127.0.0.1:8000/ex1/
 @app.get("/ex1/")
 async def ex1():
-    return
+    return {"msg": "ex1"}
 
 
 if __name__ == '__main__':
     app_run(file=__file__, app_name=app.name)'''
 
 if __name__ == '__main__':
-    create_new_app_file(file_name=r"C:\Users\MikeCoder\Documents\LESSONS\FASTAPI\THEORY\lsn13_4.py", content=cntnt)
+    create_new_app_file(file_name=r"C:\Users\MikeCoder\Documents\LESSONS\FASTAPI\THEORY\lsn14_1.py", content=cntnt)
