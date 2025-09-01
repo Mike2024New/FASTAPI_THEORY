@@ -83,6 +83,6 @@ if __name__ == '__main__':
     run_tests_and_app(
         tests_funcs=[ex1_test_1, ex1_test_2, ex1_test_3, ex1_test_4, ex1_test_5],
         app_file=__file__,
-        app_name=app.name,
+        app_name=app.username,
         app_start=True
     )

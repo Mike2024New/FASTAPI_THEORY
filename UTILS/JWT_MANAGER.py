@@ -1,14 +1,25 @@
+import time
+
 import jwt
 from datetime import datetime, timedelta, timezone
 
 
 class JWTManager:
-    def __init__(self, secret_key: str, token_action: timedelta = timedelta(minutes=30), algoritm="HS256"):
+    def __init__(self, secret_key: str, token_action: timedelta = timedelta(minutes=30), algoritm="HS256",
+                 leeway: float = 0):
         self._secret_key = secret_key
         self._token_action = token_action
         self._algoritm = algoritm
+        self._leeway = leeway
 
-    def create_token(self, data: dict):
+    def create_token(self, data: dict, token_action: timedelta | None = None):
+        """
+
+        :param data: записываемые в токен данные
+        :param token_action: длительность токена (необязательно), если не указано то возьмется общий token_action
+        объявленный при инициализации
+        :return:
+        """
         """
         создание токена, токен создаётся из 3 компонентов разделенных ".", где:
         1. HEADER -  в нем находится метаинформация, алгоритм и тип, например: {'alg': 'HS256', 'typ': 'JWT'}
@@ -26,8 +37,9 @@ class JWTManager:
         подпись (вычисленная из HEADER+PAYLOAD+SECRET_KEY) не совпадёт с первыми двумя компонентами, так как их
         обновленный хэш не будет совпадать с исходным и выдаст информацию об ошибке, что токен не валидный.
         """
+        token_action = token_action if token_action else self._token_action
         iat = datetime.now(timezone.utc)  # явное указание, что это стандартное мировое время UTC.
-        exp = iat + self._token_action
+        exp = iat + token_action
         payload = {
             "iat": iat,  # текущее время в секундах в сек. с 01.01.1970
             "exp": exp,  # вермя действия токена в сек. с 01.01.1970
@@ -47,7 +59,7 @@ class JWTManager:
             self._secret_key,
             algorithms=[self._algoritm],
             options={"verify_exp": True},  # провеярть дату токена
-            leeway=10,  # разрешить просрочку токена (время в секундах)
+            leeway=self._leeway,  # разрешить просрочку токена (время в секундах)
         )
         return decoded
 
@@ -73,6 +85,8 @@ if __name__ == '__main__':
     # ПРИМЕР ИСПОЛЬЗОВАНИЯ:
     # ВАЖНО!!! Секретные ключи в коде не хранить! Здесь просто показана строка для упрощения примера!
     jwt_manager = JWTManager(secret_key="secret")
-    token = jwt_manager.create_token(data={"login": "iv25@", "role": "admin"})
+    token = jwt_manager.create_token(data={"login": "iv25@", "role": "admin"}, token_action=timedelta(seconds=5))
+    time.sleep(10)
+    # вызовет ошибку, так как токен живет 5 секунд а прошло 10
     res = jwt_manager.get_payload_from_token_verify(token_in=token)
     print(res)
