@@ -74,5 +74,6 @@ if __name__ == '__main__':
     # ВАЖНО!!! Секретные ключи в коде не хранить! Здесь просто показана строка для упрощения примера!
     jwt_manager = JWTManager(secret_key="secret")
     token = jwt_manager.create_token(data={"login": "iv25@", "role": "admin"})
+    print(token)
     res = jwt_manager.get_payload_from_token_verify(token_in=token)
-    print(res)
+    # print(res)
