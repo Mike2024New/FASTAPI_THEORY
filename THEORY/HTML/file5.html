@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Получить данные с API</button>
+    <pre id="result"></pre>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', async()=>{
+            try{
+                const response = await fetch('http://localhost:8000/data',{
+                    credentials: 'include' // если нужны куки
+                });
+                const data = await response.json();
+                document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                document.getElementById('result').textContent = 'Ошибка: '+error;
+            }
+        });
+    </script>
+</body>
+</html>
